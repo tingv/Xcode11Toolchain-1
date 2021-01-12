@@ -14,7 +14,7 @@ As some of you know, Xcode 12 broke compiling for Arm64e, this is down to the to
 2. Now when asked what option, select 2 and press enter. This will revert the changes.
 
 # Contact
-If you want to contact me, you can do on Twitter @kanns103
+If you want to contact me, you can do so on Twitter @kanns103
 
 # License
 You are allowed to use and share the link to this script but you are not allowed to claim it as your own. If you share it, link my Twitter @kanns103
