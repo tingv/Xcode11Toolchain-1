@@ -6,7 +6,7 @@ select fav in "${xcode[@]}"; do
     case $fav in
         "Install Xcode 11 toolchain")
 echo "Renaming Xcode 12 toolchain"
-mv /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault-12.xctoolchain
+sudo mv /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault-12.xctoolchain
 cd
 echo "Done"
 
@@ -15,7 +15,7 @@ sleep 2
 
 cd /Applications/Xcode.app/Contents/Developer/Toolchains
 echo "Installing Xcode 11 toolchain"
-git clone https://github.com/nahtedetihw/Xcode11Toolchain
+sudo git clone https://github.com/nahtedetihw/Xcode11Toolchain
 echo "Done"
 cd
 ;;
@@ -27,7 +27,7 @@ sleep 2
 cd
 
 echo "Now restoring Xcode 12 toolchain"
-mv /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault-12.xctoolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
+sudo mv /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault-12.xctoolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
 cd
 sleep 1
 echo "Done"
