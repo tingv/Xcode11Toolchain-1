@@ -1,12 +1,12 @@
 #!/bin/bash
 
 PS3='Choose an option: '
-xcode=("Install Xcode 11 toolchain" "Revert back to Xcode 12 toolchain")
+xcode=("Install Xcode 11 toolchain" "Revert back to Xcode 14 toolchain")
 select fav in "${xcode[@]}"; do
     case $fav in
         "Install Xcode 11 toolchain")
-echo "Renaming Xcode 12 toolchain"
-sudo mv /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault-12.xctoolchain
+echo "Renaming Xcode 14 toolchain"
+sudo mv /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault-BACKUP.xctoolchain
 cd
 echo "Done"
 
@@ -20,14 +20,14 @@ echo "Done"
 cd
 ;;
 
-"Revert back to Xcode 12 toolchain")
+"Revert back to Xcode 14 toolchain")
 rm -r /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
 echo "Deleted Xcode 11 toolchain"
 sleep 2
 cd
 
-echo "Now restoring Xcode 12 toolchain"
-sudo mv /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault-12.xctoolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
+echo "Now restoring Xcode 14 toolchain"
+sudo mv /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault-BACKUP.xctoolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
 cd
 sleep 1
 echo "Done"
